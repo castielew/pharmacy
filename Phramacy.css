@@ -1,0 +1,43 @@
+body{
+
+    background-color: rgb(159, 216, 178);
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+}
+li{
+    margin: 15px;
+    padding: 20px;
+    border: 2px solid rgb(18, 0, 0);
+    background-color: aliceblue;
+    border-radius: 9px;
+   
+}
+li a{
+    text-decoration: none;
+    color: rgb(1, 1, 1);
+}
+li:hover{
+    background-color: rgb(139, 147, 234);
+}
+li:hover a {
+    color: white;
+}
+
+.nav{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.nav input{
+  
+    background-color: brown;
+    padding: 5px;
+    width: 80%;
+    height: 20%;
+    margin: 35px;
+ 
+    
+}

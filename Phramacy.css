@@ -1,43 +1,54 @@
-body{
-
-    background-color: rgb(159, 216, 178);
-}
-
-ul{
-    display: flex;
-    list-style-type: none;
+body {
+    padding: 0;
     margin: 0;
-}
-li{
-    margin: 15px;
-    padding: 20px;
-    border: 2px solid rgb(18, 0, 0);
-    background-color: aliceblue;
-    border-radius: 9px;
-   
-}
-li a{
-    text-decoration: none;
-    color: rgb(1, 1, 1);
-}
-li:hover{
-    background-color: rgb(139, 147, 234);
-}
-li:hover a {
-    color: white;
+    background-color: rgb(255, 255, 255);
 }
 
-.nav{
-    display: grid;
-    grid-template-columns: auto auto;
+.nav {
+    background-color: rgb(47, 207, 207);
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center; /* Center items vertically */
 }
-.nav input{
-  
-    background-color: brown;
+
+.nav ul {
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    padding: 20px;
+}
+
+.nav li a {
+    border: 2px solid black;
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.nav input {
+    margin: 2px;
     padding: 5px;
-    width: 80%;
-    height: 20%;
-    margin: 35px;
- 
-    
+    width: 250px;
+}
+
+img {
+    width: 75px;
+    height: 75px;
+    border-radius: 7px;
+    margin: 5px;
+}
+
+.imagesHead {
+    margin-left: auto; /* Pushes .imagesHead to the right */
+    display: flex; /* Ensures images are laid out in a row */
+    align-items: center; /* Aligns images vertically in the middle */
+}
+
+
+li a:hover{
+    background-color: rgb(81, 81, 238);
 }

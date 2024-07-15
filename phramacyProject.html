@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lebanon Governorate, Caza, and Neighborhood Selector</title>
+    <link rel="stylesheet" href="Phramacy.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        function updateCaza() {
+            var governorate = document.getElementById("governorate").value;
+            var caza = document.getElementById("caza");
+            caza.innerHTML = "";
+
+            var cazaOptions = {
+                beirut: [
+                    { value: "beirut", text: "Beirut" }
+                ],
+                mount_lebanon: [
+                    { value: "baabda", text: "Baabda" },
+                    { value: "chouf", text: "Chouf" },
+                    { value: "metn", text: "Metn" },
+                    { value: "keserwan", text: "Keserwan" },
+                    { value: "jbeil", text: "Jbeil" },
+                    { value: "aaley", text: "Aaley" }
+                ],
+                north: [
+                    { value: "akkar", text: "Akkar" },
+                    { value: "batroun", text: "Batroun" },
+                    { value: "bcharreh", text: "Bcharreh" },
+                    { value: "koura", text: "Koura" },
+                    { value: "miniyeh_danniyeh", text: "Miniyeh-Danniyeh" },
+                    { value: "tripoli", text: "Tripoli" },
+                    { value: "zgharta", text: "Zgharta" }
+                ],
+                bekka: [
+                    { value: "rashaya", text: "Rashaya" },
+                    { value: "west_bekaa", text: "West Bekaa" },
+                    { value: "zahle", text: "Zahle" },
+                    { value: "baalbek", text: "Baalbek" },
+                    { value: "hermel", text: "Hermel" }
+                ],
+                south: [
+                    { value: "jezzine", text: "Jezzine" },
+                    { value: "sidon", text: "Sidon" },
+                    { value: "tyre", text: "Tyre" }
+                ],
+                nabatieh: [
+                    { value: "bint_jbeil", text: "Bint Jbeil" },
+                    { value: "hasbaya", text: "Hasbaya" },
+                    { value: "marjaayoun", text: "Marjaayoun" },
+                    { value: "nabatieh", text: "Nabatieh" }
+                ]
+            };
+
+            if (cazaOptions[governorate]) {
+                cazaOptions[governorate].forEach(function (option) {
+                    var opt = document.createElement('option');
+                    opt.value = option.value;
+                    opt.innerHTML = option.text;
+                    caza.appendChild(opt);
+                });
+            }
+
+            updateNeighborhood();
+        }
+
+        function updateNeighborhood() {
+            var caza = document.getElementById("caza").value;
+            var neighborhood = document.getElementById("neighborhood");
+            neighborhood.innerHTML = "";
+
+            var neighborhoodOptions = {
+                beirut: [
+                    { value: "achrafieh", text: "Achrafieh" },
+                    { value: "basta", text: "Basta" },
+                    { value: "clemenceau", text: "Clemenceau" },
+                    { value: "hamra", text: "Hamra" },
+                    { value: "mar_elias", text: "Mar Elias" },
+                    { value: "ras_beirut", text: "Ras Beirut" },
+                    { value: "rmeil", text: "Rmeil" },
+                    { value: "saifi", text: "Saifi" },
+                    { value: "verdun", text: "Verdun" }
+                ],
+                baabda: [
+                    { value: "hadath", text: "Hadath" },
+                    { value: "chiyah", text: "Chiyah" },
+                    { value: "hazmieh", text: "Hazmieh" }
+                ],
+                chouf: [
+                    { value: "deir_el_qamar", text: "Deir El Qamar" },
+                    { value: "barouk", text: "Barouk" },
+                    { value: "beiteddine", text: "Beiteddine" }
+                ],
+                metn: [
+                    { value: "sin_el_fil", text: "Sin El Fil" },
+                    { value: "broummana", text: "Broummana" },
+                    { value: "dora", text: "Dora" }
+                ],
+                keserwan: [
+                    { value: "jounieh", text: "Jounieh" },
+                    { value: "ajaltoun", text: "Ajaltoun" },
+                    { value: "adma", text: "Adma" }
+                ],
+                jbeil: [
+                    { value: "jbeil", text: "Jbeil" },
+                    { value: "amchit", text: "Amchit" },
+                    { value: "annaya", text: "Annaya" }
+                ],
+                aaley: [
+                    { value: "aaley", text: "Aaley" },
+                    { value: "bchamoun", text: "Bchamoun" },
+                    { value: "chemlan", text: "Chemlan" }
+                ],
+                akkar: [
+                    { value: "halba", text: "Halba" },
+                    { value: "berqayel", text: "Berqayel" },
+                    { value: "qoubaiyat", text: "Qoubaiyat" }
+                ],
+                batroun: [
+                    { value: "batroun", text: "Batroun" },
+                    { value: "kfar_abida", text: "Kfar Abida" },
+                    { value: "chekka", text: "Chekka" }
+                ],
+                bcharreh: [
+                    { value: "bcharreh", text: "Bcharreh" },
+                    { value: "hadath_el_jebbeh", text: "Hadath El Jebbeh" },
+                    { value: "blawza", text: "Blawza" }
+                ],
+                koura: [
+                    { value: "amioun", text: "Amioun" },
+                    { value: "kaftoun", text: "Kaftoun" },
+                    { value: "kousba", text: "Kousba" }
+                ],
+                miniyeh_danniyeh: [
+                    { value: "miniyeh", text: "Miniyeh" },
+                    { value: "danniyeh", text: "Danniyeh" },
+                    { value: "bhannine", text: "Bhannine" }
+                ],
+                tripoli: [
+                    { value: "tripoli", text: "Tripoli" },
+                    { value: "mina", text: "Mina" },
+                    { value: "qalamoun", text: "Qalamoun" }
+                ],
+                zgharta: [
+                    { value: "zgharta", text: "Zgharta" },
+                    { value: "karm_el_mohr", text: "Karm El Mohr" },
+                    { value: "ehden", text: "Ehden" }
+                ],
+                rashaya: [
+                    { value: "rashaya", text: "Rashaya" },
+                    { value: "kfar_qouq", text: "Kfar Qouq" },
+                    { value: "kefraya", text: "Kefraya" }
+                ],
+                west_bekaa: [
+                    { value: "joub_jannine", text: "Joub Jannine" },
+                    { value: "machghara", text: "Machghara" },
+                    { value: "ghazzeh", text: "Ghazzeh" }
+                ],
+                zahle: [
+                    { value: "zahle", text: "Zahle" },
+                    { value: "mksse", text: "Mksse" },
+                    { value: "karak", text: "Karak" }
+                ],
+                baalbek: [
+                    { value: "baalbek", text: "Baalbek" },
+                    { value: "chmestar", text: "Chmestar" },
+                    { value: "hrebta", text: "Hrebta" }
+                ],
+                hermel: [
+                    { value: "hermel", text: "Hermel" },
+                    { value: "qasr", text: "Qasr" },
+                    { value: "jroud", text: "Jroud" }
+                ],
+                jezzine: [
+                    { value: "jezzine", text: "Jezzine" },
+                    { value: "bqosta", text: "Bqosta" },
+                    { value: "kfar_houna", text: "Kfar Houna" }
+                ],
+                sidon: [
+                    { value: "sidon", text: "Sidon" },
+                    { value: "ghaziyeh", text: "Ghaziyeh" },
+                    { value: "majdalouna", text: "Majdalouna" }
+                ],
+                tyre: [
+                    { value: "tyre", text: "Tyre" },
+                    { value: "abbassieh", text: "Abbassieh" },
+                    { value: "bourj_el_chamali", text: "Bourj El Chamali" }
+                ],
+                bint_jbeil: [
+                    { value: "bint_jbeil", text: "Bint Jbeil" },
+                    { value: "ayn_ata", text: "Ayn Ata" },
+                    { value: "maroun_el_raaas", text: "Maroun El Rass" }
+                ],
+                hasbaya: [
+                    { value: "hasbaya", text: "Hasbaya" },
+                    { value: "kfar_hamem", text: "Kfar Hamem" },
+                    { value: "fardis", text: "Fardis" }
+                ],
+                marjaayoun: [
+                    { value: "marjaayoun", text: "Marjaayoun" },
+                    { value: "qlaiaa", text: "Qlaiaa" },
+                    { value: "deir_mimas", text: "Deir Mimas" }
+                ],
+                nabatieh: [
+                    { value: "nabatieh", text: "Nabatieh" },
+                    { value: "koukab_aml", text: "Koukab Aml" },
+                    { value: "toul", text: "Toul" }
+                ]
+            };
+
+            if (neighborhoodOptions[caza]) {
+                neighborhoodOptions[caza].forEach(function (option) {
+                    var opt = document.createElement('option');
+                    opt.value = option.value;
+                    opt.innerHTML = option.text;
+                    neighborhood.appendChild(opt);
+                });
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="">Pharmacies</a></li>
+            <li><a href="">Medicines</a></li>
+            <li><a href="">Diseases</a></li>
+            <li><input type="text" class="Search" placeholder="Search "></li>
+        </ul>
+        <div class="imagesHead">
+            <img src="pharmacy/images.png" alt="">
+            <img src="pharmacy/fbLogo3.jpg" alt="">
+            <img src="pharmacy/_3biQb-E_400x400.jpg" alt="">
+        </div>
+    </div>
+
+    <form>
+        <label for="governorate">Select a Governorate:</label>
+        <select id="governorate" name="governorate" onchange="updateCaza()">
+            <option value="">Select a Governorate</option>
+            <option value="beirut">Beirut</option>
+            <option value="mount_lebanon">Mount Lebanon</option>
+            <option value="north">North</option>
+            <option value="bekka">Bekka</option>
+            <option value="south">South</option>
+            <option value="nabatieh">Nabatieh</option>
+        </select>
+
+        <label for="caza">Select a Caza (District):</label>
+        <select id="caza" name="caza" onchange="updateNeighborhood()">
+            <option value="">Select a Caza</option>
+        </select>
+
+        <label for="neighborhood">Select a Neighborhood:</label>
+        <select id="neighborhood" name="neighborhood">
+            <option value="">Select a Neighborhood</option>
+        </select>
+    </form>
+
+    <button type="button" class="btn btn">Base class</button>
+</body>
+
+</html>
